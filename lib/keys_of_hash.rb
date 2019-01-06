@@ -1,16 +1,8 @@
 class Hash
-  def keys_of(*args)
-    map {|key, value| args.include?(value) ? key : nil }.compact
-  end
-end
-
-
-class Hash
-  def keys_of(*arguments) #add any arguments
-    array = [] #create a new array for the result
-    #self: arguments
+  def keys_of(*args) 
+    array = [] 
     self.each do |key, value|
-      if arguments.include?(value) #check match value from arguments
+      if args.include?(value) 
         array << key
       end
     end
